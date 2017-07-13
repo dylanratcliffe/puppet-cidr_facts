@@ -1,13 +1,15 @@
 {
   "name": "dylanratcliffe-cidr_facts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "dylanratcliffe",
   "summary": "Set facts based on network ranges",
   "license": "Apache-2.0",
   "source": "https://github.com/dylanratcliffe/puppet-cidr_facts",
   "project_page": "https://github.com/dylanratcliffe/puppet-cidr_facts",
   "issues_url": "https://github.com/dylanratcliffe/puppet-cidr_facts/issues",
-  "dependencies": [],
+  "dependencies": [
+
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian"
