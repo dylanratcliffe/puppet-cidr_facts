@@ -1,0 +1,37 @@
+{
+  "name": "dylanratcliffe-cidr_facts",
+  "version": "0.1.0",
+  "author": "dylanratcliffe",
+  "summary": "Set facts based on network ranges",
+  "license": "Apache-2.0",
+  "source": "https://github.com/dylanratcliffe/puppet-cidr_facts",
+  "project_page": "https://github.com/dylanratcliffe/puppet-cidr_facts",
+  "issues_url": "https://github.com/dylanratcliffe/puppet-cidr_facts/issues",
+  "dependencies": [],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian"
+    },
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "Ubuntu"
+    },
+    {
+      "operatingsystem": "Windows"
+    },
+    {
+      "operatingsystem": "Solaris"
+    },
+    {
+      "operatingsystem": "AIX"
+    }
+  ],
+  "tags": [
+    "network",
+    "cidr",
+    "zone",
+    "custom facts"
+  ]
+}

@@ -1,0 +1,49 @@
+GEM
+  specs:
+    CFPropertyList (2.2.8)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    facter (2.4.6)
+    facter (2.4.6-universal-darwin)
+      CFPropertyList (~> 2.2.6)
+    fast_gettext (1.1.0)
+    gettext (3.2.3)
+      locale (>= 2.0.5)
+      text (>= 1.3.0)
+    gettext-setup (0.25)
+      fast_gettext (~> 1.1.0)
+      gettext (>= 3.0.2)
+      locale
+    hiera (3.4.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    locale (2.1.2)
+    mime-types (2.99.3)
+    netrc (0.11.0)
+    puppet (5.0.0-universal-darwin)
+      CFPropertyList (~> 2.2)
+      facter (> 2.0, < 4)
+      gettext-setup (>= 0.10, < 1)
+      hiera (>= 3.2.1, < 4)
+      locale (~> 2.1)
+    puppet-blacksmith (3.4.0)
+      puppet (>= 2.7.16)
+      rest-client (~> 1.8.0)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    text (1.3.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+
+PLATFORMS
+  ruby
+  x86_64-darwin-15
+
+DEPENDENCIES
+  puppet-blacksmith
+
+BUNDLED WITH
+   1.15.1
