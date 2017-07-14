@@ -29,6 +29,8 @@ Facter.add(:cidr_facts) do
 
         if cidr.include?(ip)
           final_hash.merge(fact_entries)
+        else
+          final_hash
         end
       end
     end
