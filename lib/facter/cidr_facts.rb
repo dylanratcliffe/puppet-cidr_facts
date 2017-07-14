@@ -2,10 +2,11 @@ Facter.add(:cidr_facts) do
   require 'ipaddr'
   require 'json'
 
-  Facter.debug "cidr_facts using pwd #{Dir.pwd}"
+  cwd = File.expand_path(File.dirname(__FILE__))
+  Facter.debug "cidr_facts using cwd #{cwd}"
 
   # Load all JSON files
-  files = Dir['cidr.d/*.json']
+  files = Dir["#{cwd}/cidr.d/*.json"]
 
   if files.empty?
     Facter.debug "cidr_facts found no files in cidr.d"
