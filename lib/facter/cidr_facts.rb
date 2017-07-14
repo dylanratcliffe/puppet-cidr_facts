@@ -5,7 +5,7 @@ Facter.add(:cidr_facts) do
   # Load all JSON files
   files = Dir['../cidr.d/*.json']
 
-  if files.empty?``
+  if files.empty?
     setcode { nil }
   else
     data = files.map do |file|
