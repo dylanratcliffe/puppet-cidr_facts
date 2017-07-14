@@ -1,6 +1,6 @@
 {
   "name": "dylanratcliffe-cidr_facts",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "dylanratcliffe",
   "summary": "Set facts based on network ranges",
   "license": "Apache-2.0",
