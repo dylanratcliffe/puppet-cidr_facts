@@ -3,7 +3,7 @@ Facter.add(:cidr_facts) do
   require 'json'
 
   # Load all JSON files
-  files = Dir['../cidr.d/*.json']
+  files = Dir['cidr.d/*.json']
 
   if files.empty?
     setcode { nil }
