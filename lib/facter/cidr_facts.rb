@@ -2,7 +2,7 @@ Facter.add(:cidr_facts) do
   require 'ipaddr'
   require 'json'
 
-  Facter.debug "cidr_facts using cwd #{Dir.cwd}"
+  Facter.debug "cidr_facts using pwd #{Dir.pwd}"
 
   # Load all JSON files
   files = Dir['cidr.d/*.json']
