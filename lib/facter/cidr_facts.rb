@@ -6,10 +6,12 @@ Facter.add(:cidr_facts) do
   files = Dir['cidr.d/*.json']
 
   if files.empty?
+    Facter.debug "cidr_facts found no files in cidr.d"
     setcode { nil }
   else
     setcode do
       data = files.map do |file|
+        Facter.debug "Reading #{file}"
         JSON.parse(File.read(file))
       end
 
@@ -21,6 +23,7 @@ Facter.add(:cidr_facts) do
       end.reverse
 
       ip = IPAddr.new(Facter.value(:networking)['ip'])
+      Facter.debug "Got current IP as #{ip.to_s}"
 
       # Return this
       cidrs.inject({}) do |final_hash, entry|
@@ -28,6 +31,7 @@ Facter.add(:cidr_facts) do
         fact_entries = entry[1]
 
         if cidr.include?(ip)
+          Facter.debug "Merging #{entry.to_s} into cidr_facts"
           final_hash.merge(fact_entries)
         else
           final_hash
