@@ -8,26 +8,28 @@ Facter.add(:cidr_facts) do
   if files.empty?
     setcode { nil }
   else
-    data = files.map do |file|
-      JSON.parse(File.read(file))
-    end
+    setcode do
+      data = files.map do |file|
+        JSON.parse(File.read(file))
+      end
 
-    data = data.reduce(:merge)
+      data = data.reduce(:merge)
 
-    # Sort based on mask size
-    cidrs = data.sort_by do |cidr,facts|
-      cidr.split('/')[1]
-    end.reverse
+      # Sort based on mask size
+      cidrs = data.sort_by do |cidr,facts|
+        cidr.split('/')[1]
+      end.reverse
 
-    ip = IPAddr.new(Facter.value(:networking)['ip'])
+      ip = IPAddr.new(Facter.value(:networking)['ip'])
 
-    # Return this
-    cidrs.inject({}) do |final_hash, entry|
-      cidr = IPAddr.new(entry[0])
-      fact_entries = entry[1]
+      # Return this
+      cidrs.inject({}) do |final_hash, entry|
+        cidr = IPAddr.new(entry[0])
+        fact_entries = entry[1]
 
-      if cidr.include?(ip)
-        final_hash.merge(fact_entries)
+        if cidr.include?(ip)
+          final_hash.merge(fact_entries)
+        end
       end
     end
   end
