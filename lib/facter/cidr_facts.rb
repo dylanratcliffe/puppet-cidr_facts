@@ -1,13 +1,13 @@
 Facter.add(:cidr_facts) do
-  setcode do
-    require 'ipaddr'
-    require 'json'
+  require 'ipaddr'
+  require 'json'
 
-    # Load all JSON files
-    files = Dir['../../facts/cidr.d/*.json']
+  # Load all JSON files
+  files = Dir['../cidr.d/*.json']
 
-    return nil if files.empty?
-
+  if files.empty?``
+    setcode { nil }
+  else
     data = files.map do |file|
       JSON.parse(File.read(file))
     end
