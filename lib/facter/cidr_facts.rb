@@ -23,7 +23,7 @@ Facter.add(:cidr_facts) do
       # Sort based on mask size
       cidrs = data.sort_by do |cidr,facts|
         cidr.split('/')[1]
-      end.reverse
+      end
 
       ip = IPAddr.new(Facter.value(:networking)['ip'])
       Facter.debug "Got current IP as #{ip.to_s}"
